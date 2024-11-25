@@ -31,7 +31,6 @@ public class AppUserManager {
     }
 
     public void logout() {
-        // Limpar as preferências do usuário (dados de login, por exemplo)
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.remove("id");
         editor.remove("username");

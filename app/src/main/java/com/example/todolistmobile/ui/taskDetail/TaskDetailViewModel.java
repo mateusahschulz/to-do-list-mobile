@@ -19,8 +19,6 @@ public class TaskDetailViewModel extends ViewModel {
     private MutableLiveData<Boolean> isTaskStatusUpdated;
     private MutableLiveData<String> taskUpdateStatusError;
 
-    // Método para setar a tarefa
-
     public TaskDetailViewModel() {
         taskRepository = new TaskRepository();
         isTaskUpdated = new MutableLiveData<Boolean>();
@@ -63,7 +61,6 @@ public class TaskDetailViewModel extends ViewModel {
     }
 
     public void updateTask(Task taskToBeUpdated) {
-        // Simulação de chamada de API para atualizar a tarefa
         taskRepository.updateTask(taskToBeUpdated, new ApiCallback<Task>() {
             @Override
             public void onSuccess(Task result) {

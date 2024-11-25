@@ -55,9 +55,8 @@ public class TaskDetailFragment extends Fragment {
 
             DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(),
                     (view1, selectedYear, selectedMonth, selectedDay) -> {
-                        // Formato da data: ano-mês-dia
                         String selectedDate = selectedYear + "-" + (selectedMonth + 1) + "-" + selectedDay;
-                        binding.taskDueDate.setText(selectedDate); // Atualizando o EditText com a data selecionada
+                        binding.taskDueDate.setText(selectedDate);
                     }, year, month, day);
 
             datePickerDialog.show();
@@ -68,12 +67,11 @@ public class TaskDetailFragment extends Fragment {
 
             System.out.println(currentStatus);
 
-            // Avançando o status
             if (!currentStatus.equals("done")) {
                 String nextStatus = getNextStatus(currentStatus);
                 System.out.println(nextStatus);
-                task.setStatus(nextStatus); // Atualiza o status localmente
-                taskDetailViewModel.updateTaskStatus(task); // Envia a requisição para atualizar o status
+                task.setStatus(nextStatus);
+                taskDetailViewModel.updateTaskStatus(task);
             }
         });
 
@@ -174,7 +172,7 @@ public class TaskDetailFragment extends Fragment {
             case "in_progress":
                 return "done";
             default:
-                return currentStatus; // Caso seja "done", não muda
+                return currentStatus;
         }
     }
 

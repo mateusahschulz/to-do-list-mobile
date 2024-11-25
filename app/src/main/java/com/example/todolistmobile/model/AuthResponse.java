@@ -1,10 +1,9 @@
 package com.example.todolistmobile.model;
 
 public class AuthResponse {
-    private User user;       // Dados do usuário retornado em caso de sucesso
-    private String error;    // Mensagem de erro retornada em caso de falha
+    private User user;
+    private String error;
 
-    // Getters e Setters
     public User getUser() {
         return user;
     }

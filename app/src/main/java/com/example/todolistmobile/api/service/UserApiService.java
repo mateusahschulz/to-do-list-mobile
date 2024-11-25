@@ -9,10 +9,10 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public interface UserApiService {
-    @GET("/user") // Endpoint da API
+    @GET("/user")
     Call<List<User>> getUsers();
 
-    @GET("user/{id}") // Endpoint com parâmetro
+    @GET("user/{id}")
     Call<User> getUserById(@Path("id") int userId);
 }
 

@@ -1,6 +1,5 @@
 package com.example.todolistmobile.api.service;
 
-import com.example.todolistmobile.model.AuthResponse;
 import com.example.todolistmobile.model.User;
 
 import retrofit2.Call;
@@ -11,4 +10,4 @@ public interface AuthApiService {
 
     @POST("/auth/login")
     Call<User> login(@Body User user);
-} // TODO tava auth
+}

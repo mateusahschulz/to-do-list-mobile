@@ -27,7 +27,6 @@ public class HomeFragment extends Fragment {
 
         HomeViewModelFactory factory = new HomeViewModelFactory(requireActivity().getApplication());
         homeViewModel = new ViewModelProvider(this, factory).get(HomeViewModel.class);
-        // homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();

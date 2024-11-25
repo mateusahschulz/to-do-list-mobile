@@ -60,13 +60,11 @@ public class ModalViewModel extends ViewModel {
         taskRepository.createTask(taskToBeCreated, new ApiCallback<Task>() {
             @Override
             public void onSuccess(Task result) {
-                // A tarefa foi criada com sucesso
                 isTaskCreated.setValue(true);
             }
 
             @Override
             public void onError(String error) {
-                // Houve um erro ao criar a tarefa
                 taskCreationError.setValue(error);
             }
         });

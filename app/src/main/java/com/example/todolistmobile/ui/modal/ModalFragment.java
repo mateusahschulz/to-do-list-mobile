@@ -38,11 +38,9 @@ public class ModalFragment extends DialogFragment {
         ModalViewModelFactory factory = new ModalViewModelFactory(appUserManager);
 
         modalViewModel = new ViewModelProvider(this, factory).get(ModalViewModel.class);
-        // modalViewModel = new ViewModelProvider(requireActivity()).get(ModalViewModel.class);
 
         HomeViewModelFactory homeFactory = new HomeViewModelFactory(requireActivity().getApplication());
         homeViewModel = new ViewModelProvider(requireActivity(), homeFactory).get(HomeViewModel.class);
-        // homeViewModel = new ViewModelProvider(requireActivity()).get(HomeViewModel.class);
 
         editDate = view.findViewById(R.id.dialog_input_date);
         editTaskTitle = view.findViewById(R.id.dialog_task_title);
@@ -66,7 +64,6 @@ public class ModalFragment extends DialogFragment {
 
             DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(),
                     (view1, selectedYear, selectedMonth, selectedDay) -> {
-                        // Definindo a data selecionada no EditText
                         String selectedDate = selectedYear + "-" + (selectedMonth + 1) + "-" + selectedDay;
                         editDate.setText(selectedDate);
                     }, year, month, day);
@@ -92,11 +89,9 @@ public class ModalFragment extends DialogFragment {
             String taskTitle = editTaskTitle.getText().toString();
             String taskDescription = editTaskDescription.getText().toString();
             String taskDueDate = editDate.getText().toString();
-            // Valida se todos os campos estão preenchidos
             if (taskTitle.isEmpty() || taskDescription.isEmpty() || taskDueDate.isEmpty()) {
                 Snackbar.make(view, "Por favor, preencha todos os campos.", Snackbar.LENGTH_LONG).show();
             } else {
-                // Chama o método no ViewModel para criar a tarefa
                 modalViewModel.createTask(taskTitle, taskDescription, taskDueDate);
             }
         });
@@ -113,9 +108,7 @@ public class ModalFragment extends DialogFragment {
     public void onStart() {
         super.onStart();
 
-        // Obtém a janela do diálogo
         if (getDialog() != null && getDialog().getWindow() != null) {
-            // Configura a largura e altura personalizadas
             getDialog().getWindow().setLayout(
                     (int) (getResources().getDisplayMetrics().widthPixels * 0.9), // 90% da largura da tela
                     (int) (getResources().getDisplayMetrics().heightPixels * 0.5) // 50% da altura da tela

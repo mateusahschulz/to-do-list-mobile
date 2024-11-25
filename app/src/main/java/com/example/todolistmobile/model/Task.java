@@ -3,8 +3,6 @@ package com.example.todolistmobile.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import androidx.core.view.accessibility.AccessibilityViewCommand;
-
 public class Task implements Parcelable {
 
     private Integer id;

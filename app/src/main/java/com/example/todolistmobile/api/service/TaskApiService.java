@@ -18,9 +18,6 @@ public interface TaskApiService {
     @GET("/task/by-user/{id}") // Endpoint da API
     Call<List<Task>> getTasks(@Path("id") int userId);
 
-    // @GET("/task")
-    // Call<List<Task>> getTasks();
-
     @POST("/task")
     Call<Task> createTask(@Body Task task);
 

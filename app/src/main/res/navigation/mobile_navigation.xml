@@ -20,20 +20,7 @@
         android:name="com.example.todolistmobile.ui.taskDetail.TaskDetailFragment"
         android:label="Detalhes da Tarefa"
         tools:layout="@layout/fragment_task_detail">
-        <!-- Nenhum argumento necessário aqui, pois estamos passando a tarefa completa -->
     </fragment>
-
-    <!-- <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.todolistmobile.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.todolistmobile.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />-->
 
     <fragment
         android:id="@+id/nav_settings"

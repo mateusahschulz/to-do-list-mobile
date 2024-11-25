@@ -22,33 +22,24 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Inicializa o ViewModel
-        // loginViewModel = new ViewModelProvider(this).get(LoginViewModel.class);
-
         loginViewModel = new ViewModelProvider(this, new LoginViewModelFactory(getApplication())).get(LoginViewModel.class);
 
         etUserName = findViewById(R.id.etUserName);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
 
-        // Observa o estado do login
         loginViewModel.isLoggedIn().observe(this, isLoggedIn -> {
             if (isLoggedIn) {
-
-                System.out.println("passei por aqui");
-                // Se o usuário estiver logado, vai para a MainActivity
                 navigateToMainActivity();
             }
         });
 
         loginViewModel.getLoginError().observe(this, errorMessage -> {
             if (errorMessage != null) {
-                // Exibe a mensagem de erro caso o login falhe
                 Toast.makeText(LoginActivity.this, "Erro ao realizar login: " + errorMessage, Toast.LENGTH_SHORT).show();
             }
         });
 
-        // Configurar o clique no botão de login
         btnLogin.setOnClickListener(v -> {
             String email = etUserName.getText().toString().trim();
             String password = etPassword.getText().toString().trim();

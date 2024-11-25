@@ -22,7 +22,7 @@ public class AuthRepository {
         authApi = retrofit.create(AuthApiService.class);
     }
 
-    public void login(User user, ApiCallback<User> callback) { // TODO antes tava AuthReponse
+    public void login(User user, ApiCallback<User> callback) {
         Call<User> call = authApi.login(user);
         ApiUtil.executeCall(call, callback);
     }

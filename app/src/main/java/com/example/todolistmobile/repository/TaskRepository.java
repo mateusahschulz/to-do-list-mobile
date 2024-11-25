@@ -16,8 +16,6 @@ public class TaskRepository {
 
     private TaskApiService taskApi;
 
-    AppUserManager userManager;
-
     public TaskRepository() {
         Retrofit retrofit = RetroFitClient.getRetrofitInstance();
         taskApi = retrofit.create(TaskApiService.class);

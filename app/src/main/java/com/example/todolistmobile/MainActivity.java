@@ -79,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
             userManager = new AppUserManager(this);
             userManager.logout();
 
-            // Na MainActivity, por exemplo, ao fazer logout ou verificar o estado do login
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
 
